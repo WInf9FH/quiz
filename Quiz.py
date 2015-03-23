@@ -1,9 +1,11 @@
+import json
+
+in_file= open ("Fragen.txt","rt")
+Quiz = json.loads(in_file.read())
+in_file.close()
+
 SL=[]
-Quiz=[["Wie heißt die Hauptstadt von Deutschland?""\n",["A: Bonn","B: Hamburg","C: Berlin","D: München", "\n"],"C"],
-           ["Welches Teilchen ist positiv?""\n",["A: Proton","B: Neutron","C: Elektron","D: Anion""\n"],"A"],
-           ["Wie viele Einwohner hat Deutschland?""\n",["A: 82","B: 82.000","C: 82 Mrd.","D: 82 Mio.""\n"],"D"],
-           ["Wann begann der erste Weltkrieg?""\n",["A: 1913","B: 1914","C: 1933","D: 1892""\n"],"B"]]
-         
+      
 def players():
     AnzSp=int(input("Wie viele Spieler spielen mit?""\t"))
     for i in range(1,AnzSp+1):
