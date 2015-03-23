@@ -1,5 +1,9 @@
 import json
 out_file = open('fragen.txt', 'wt')
+
+# Weitere Fragen können nach selbigem Prinzip in die "Fragen"-Liste angefügt werden:
+# ["Frage""\n",["A: AntwortA", "B: AntwortB", "C: AntwortC", "D: AntwortD""\n"], "BuchstabeDerRichtigenAntwort"]
+
 Fragen=[["Wie heißt die Hauptstadt von Deutschland?""\n",["A: Bonn","B: Hamburg","C: Berlin","D: München", "\n"],"C"],
         ["Welches Teilchen ist positiv?""\n",["A: Proton","B: Neutron","C: Elektron","D: Anion""\n"],"A"],
         ["Wie viele Einwohner hat Deutschland?""\n",["A: 82","B: 82.000","C: 82 Mrd.","D: 82 Mio.""\n"],"D"],
