@@ -68,14 +68,14 @@ if int(Spielart) == 1:
       for o in range (0,f):
           print_question(Quiz,o)
           print_answers(Quiz, o)
-          richtig = False
+          richtig = True
           for u in range(0,y):
               print(SL[u][0],"ist an der Reihe") 
               x=input("Antwort:")
               if correct_answer(Quiz,o,x):
                   SL[u][1]=SL[u][1]+1
                   richtig = True
-          if richtig == False:
+          if richtig == True:
               result_answers(o,Quiz,SL)
       for i in range(0,y):
           print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f,"möglichen Punkten erreicht")
@@ -95,3 +95,4 @@ else:
         result_answers(o,Quiz,SL)
     for i in range(0,len(SL)):
         print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f," möglichen Punkten erreicht.")
+
