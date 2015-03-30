@@ -32,8 +32,6 @@ def correct_answer(L,r,RAntwort):
 
 def result_answers(y,r,L,SL):
     print("Die richtige Antwort war ",L[r][2],"\n") 
-    # Folgendes wird auch ausgeführt, wenn Quiz zuende ist, wird
-    # also doppelt ausgegeben. Bitte noch ändern!
     for i in range(0,len(SL)):
         print(SL[i][0], "hat momentan",SL[i][1],"Punkt(e).""\n")
 
@@ -51,11 +49,19 @@ def get_player_by_key(pressedKey):
         if SL[i][2] == pressedKey:
             #foundPlayer = SL[i]
             return i
+    
+def punkte_rechnen(Quiz,o,x):
+    if correct_answer(Quiz,o,x):
+                SL[getPlayer][1]=SL[getPlayer][1]+1
+                richtig = True
+                print("Das war richtig!")
+
 
 print("Verfügbare Spielvarianten:")
 print("1 - Jeder Spieler gibt eine Antwort ab.")
 print("2 - Jeder Spieler bekommt eine Taste zugewiesen, drückt er diese,\nist er der einzige der die Frage beantworten darf.")
 Spielart = input("Welche möchtest du nutzen?")
+
 
 # Spielvariante 1
 if int(Spielart) == 1:
@@ -88,14 +94,7 @@ else:
         print(SL[getPlayer][0],"ist an der Reihe.")
         x = input("Welche Antwort ist richtig?")
         richtig = False
-        if correct_answer(Quiz,o,x):
-                SL[getPlayer][1]=SL[getPlayer][1]+1
-                richtig = True
-                print("Das war richtig!")
-                # Folgendes wird auch ausgeführt, wenn Quiz zuende ist, wird
-                # also doppelt ausgegeben. Bitte noch ändern!
-                for i in range(0,len(SL)):
-                    print(SL[i][0], "hat momentan",SL[i][1],"Punkt(e).""\n")
+        punkte_rechnen(Quiz,o,x)
         if richtig == False:
             result_answers(y,o,Quiz,SL)
     for i in range(0,len(SL)):
