@@ -30,7 +30,7 @@ def correct_answer(L,r,RAntwort):
         correct =False
     return correct
 
-def result_answers(y,r,L,SL):
+def result_answers(r,L,SL):
     print("Die richtige Antwort war ",L[r][2],"\n") 
     for i in range(0,len(SL)):
         print(SL[i][0], "hat momentan",SL[i][1],"Punkt(e).""\n")
@@ -53,8 +53,6 @@ def get_player_by_key(pressedKey):
 def punkte_rechnen(Quiz,o,x):
     if correct_answer(Quiz,o,x):
                 SL[getPlayer][1]=SL[getPlayer][1]+1
-                richtig = True
-                print("Das war richtig!")
 
 
 print("Verfügbare Spielvarianten:")
@@ -78,7 +76,7 @@ if int(Spielart) == 1:
                   SL[u][1]=SL[u][1]+1
                   richtig = True
           if richtig == False:
-              result_answers(y,o,Quiz,SL)
+              result_answers(o,Quiz,SL)
       for i in range(0,y):
           print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f,"möglichen Punkten erreicht")
 else:        
@@ -93,9 +91,7 @@ else:
         # Hier werden mindestens ZWEI Spieler benötigt!
         print(SL[getPlayer][0],"ist an der Reihe.")
         x = input("Welche Antwort ist richtig?")
-        richtig = False
         punkte_rechnen(Quiz,o,x)
-        if richtig == False:
-            result_answers(y,o,Quiz,SL)
+        result_answers(o,Quiz,SL)
     for i in range(0,len(SL)):
         print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f," möglichen Punkten erreicht.")
