@@ -81,7 +81,7 @@ if int(Spielart) == 1:
           print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f,"möglichen Punkten erreicht")
 else:        
     # Spielvariante 2
-    y=give_player_key()
+    give_player_key()
     f=len(Quiz)
     for o in range (0,f):
         print_question(Quiz,o)
