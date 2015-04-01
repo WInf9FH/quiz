@@ -1,2 +1,0 @@
-Diese Datei dient einzig und allein als Platzhalter um den "utilities"-Ordner zu erstellen.
-Kann daher gelöscht werden, wenn eine andere Datei in diesen Ordner verschoben wird.
