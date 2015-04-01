@@ -12,11 +12,8 @@ in_file.close()
 
 # Spielerliste importieren
 SL=[]
-in_file = open ("playerList.txt","rt")
-SL = json.loads(in_file.read())
-in_file.close()
 
-def refreshPlayerList():
+def refreshPlayerList(): #Funktioniert anscheinend nicht!
     in_file = open ("playerList.txt","rt")
     SL = json.loads(in_file.read())
     in_file.close()
@@ -30,7 +27,10 @@ Spielart = input("Welche möchtest du nutzen?")
 
 # Spielvariante 1
 if int(Spielart) == 1:
-      y=players()        
+      y=players()
+      in_file = open ("playerList.txt","rt")
+      SL = json.loads(in_file.read())
+      in_file.close()
       f=len(Quiz)
       for o in range (0,f):
           print_question(Quiz,o)
@@ -44,13 +44,17 @@ if int(Spielart) == 1:
                   richtig = True
           if richtig == True:
               result_answers(o,Quiz,SL)
-      refreshPlayerList()
+      in_file = open ("playerList.txt","rt")
+      SL = json.loads(in_file.read())
+      in_file.close()
       for i in range(0,y):
           print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f,"möglichen Punkten erreicht")
-      emptyPlayerList()
 else:        
     # Spielvariante 2
     give_player_key()
+    in_file = open ("playerList.txt","rt")
+    SL = json.loads(in_file.read())
+    in_file.close()
     f=len(Quiz)
     for o in range (0,f):
         print_question(Quiz,o)
@@ -61,7 +65,8 @@ else:
         x = input("Welche Antwort ist richtig?")
         punkte_rechnen(Quiz,o,x, PressedKey)
         result_answers(o,Quiz,SL)
-    refreshPlayerList()
+    in_file = open ("playerList.txt","rt")
+    SL = json.loads(in_file.read())
+    in_file.close()
     for i in range(0,len(SL)):
         print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f," möglichen Punkten erreicht.")
-    emptyPlayerList()
