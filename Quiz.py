@@ -4,6 +4,7 @@ from playerListProcessors import *
 from PrintTexts import *
 from AnswerProcessors import *
 from getPlayerByKey import *
+from Highscore import *
 
 # Fragen importieren
 in_file= open ("Fragen.txt","rt")
@@ -47,6 +48,9 @@ if int(Spielart) == 1:
       in_file.close()
       for i in range(0,y):
           print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f,"möglichen Punkten erreicht")
+          player = SL[i][0]
+          score = SL[i][1]
+          compareScore(player, score, 0)
 else:        
     # Spielvariante 2
     give_player_key()
@@ -68,3 +72,6 @@ else:
     in_file.close()
     for i in range(0,len(SL)):
         print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f," möglichen Punkten erreicht.")
+        player = SL[i][0]
+        score = SL[i][1]
+        compareScore(player, score, 1)
