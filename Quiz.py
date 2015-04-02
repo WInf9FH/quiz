@@ -35,15 +35,13 @@ if int(Spielart) == 1:
       for o in range (0,f):
           print_question(Quiz,o)
           print_answers(Quiz, o)
-          richtig = True
           for u in range(0,y):
               print(SL[u][0],"ist an der Reihe") 
               x=input("Antwort:")
               if correct_answer(Quiz,o,x):
                   SL[u][1]=SL[u][1]+1
-                  richtig = True
-          if richtig == True:
-              result_answers(o,Quiz,SL)
+                  savePlayerList(SL)
+          result_answers(o,Quiz,SL)
       in_file = open ("playerList.txt","rt")
       SL = json.loads(in_file.read())
       in_file.close()
