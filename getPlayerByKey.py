@@ -12,3 +12,4 @@ def getPlayerByKey(pressedKey):
     for i in range(0,len(SL)):
         if SL[i][2] == pressedKey:
             return i
+    return -1
