@@ -62,7 +62,7 @@ else:
         print_question(Quiz,o)
         print_answers(Quiz, o)
         PressedKey = input("Wenn du die Antwort weißt, drücke deine Taste! ")
-        getPlayer = -1
+        getPlayer = getPlayerByKey(PressedKey)
         while getPlayer == -1:
             PressedKey = input("Diese Taste ist falsch. Noch einmal: ")
             getPlayer = getPlayerByKey(PressedKey)
