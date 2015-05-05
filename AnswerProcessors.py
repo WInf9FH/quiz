@@ -15,10 +15,11 @@ def importPlayerList():
 
 def correct_answer(L,r,RAntwort):
     Antworten=L[r][2]
-    if RAntwort==L[r][2] :
+    givenAnswer = convertUpperCase(RAntwort)
+    if givenAnswer==L[r][2] :
         correct = True
     else:
-        correct =False
+        correct = False
     return correct
 
 def result_answers(r,L,SL):
@@ -33,3 +34,17 @@ def punkte_rechnen(Quiz,o,x, pressedKey):
                 getPlayer = getPlayerByKey(pressedKey)
                 SL[getPlayer][1]=SL[getPlayer][1]+1
                 savePlayerList(SL)
+
+def convertUpperCase(answer):
+    if answer == "A" or answer == "a":
+        uc = "B"
+        return uc
+    if answer == "B" or answer == "b":
+        uc = "B"
+        return uc
+    if answer == "C" or answer == "c":
+        uc = "C"
+        return uc
+    if answer == "D" or answer == "d":
+        uc = "D"
+        return uc
