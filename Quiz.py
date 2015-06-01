@@ -19,11 +19,11 @@ def refreshPlayerList(): #Funktioniert anscheinend nicht!
     SL = json.loads(in_file.read())
     in_file.close()
 
-# Gewünschte Spielvariante abfragen
-print("Verfügbare Spielvarianten:")
+# GewÃ¼nschte Spielvariante abfragen
+print("Verfuegbare Spielvarianten:")
 print("1 - Jeder Spieler gibt eine Antwort ab.")
-print("2 - Jeder Spieler bekommt eine Taste zugewiesen, drückt er diese,\nist er der einzige der die Frage beantworten darf.")
-Spielart = input("Welche möchtest du nutzen? ")
+print("2 - Jeder Spieler bekommt eine Taste zugewiesen, drueckt er diese,\nist er der einzige der die Frage beantworten darf.")
+Spielart = input("Welche moechtest du nutzen? ")
 
 
 # Spielvariante 1
@@ -37,8 +37,8 @@ if int(Spielart) == 1:
           print_question(Quiz,o)
           print_answers(Quiz, o)
           for u in range(0,y):
-              print(SL[u][0],"ist an der Reihe") 
-              x=input("Antwort: ")
+              print(str(SL[u][0])+" ist an der Reihe") 
+              x=raw_input("Antwort: ")
               if correct_answer(Quiz,o,x):
                   SL[u][1]=SL[u][1]+1
                   savePlayerList(SL)
@@ -47,7 +47,7 @@ if int(Spielart) == 1:
       SL = json.loads(in_file.read())
       in_file.close()
       for i in range(0,y):
-          print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f,"möglichen Punkten erreicht")
+          print(str(SL[i][0])+"hat"+str(SL[i][1])+"Punkt(e) von"+f+"moeglichen Punkten erreicht")
           player = SL[i][0]
           score = SL[i][1]
           compareScore(player, score, 0)
@@ -61,20 +61,20 @@ else:
     for o in range (0,f):
         print_question(Quiz,o)
         print_answers(Quiz, o)
-        PressedKey = input("Wenn du die Antwort weißt, drücke deine Taste! ")
+        PressedKey = input("Wenn du die Antwort weisst, druecke deine Taste! ")
         getPlayer = getPlayerByKey(PressedKey)
         while getPlayer == -1:
             PressedKey = input("Diese Taste ist falsch. Noch einmal: ")
             getPlayer = getPlayerByKey(PressedKey)
-        print(SL[getPlayer][0],"ist an der Reihe.")
-        x = input("Welche Antwort ist richtig? ")
+        print(str(SL[getPlayer][0])+" ist an der Reihe.")
+        x = raw_input("Welche Antwort ist richtig? ")
         punkte_rechnen(Quiz,o,x, PressedKey)
         result_answers(o,Quiz,SL)
     in_file = open ("playerList.txt","rt")
     SL = json.loads(in_file.read())
     in_file.close()
     for i in range(0,len(SL)):
-        print(SL[i][0],"hat",SL[i][1],"Punkt(e) von",f," möglichen Punkten erreicht.")
+        print(str(SL[i][0])+"hat"+str(SL[i][1])+"Punkt(e) von"+f+" moeglichen Punkten erreicht.")
         player = SL[i][0]
         score = SL[i][1]
         compareScore(player, score, 1)
