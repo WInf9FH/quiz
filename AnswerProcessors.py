@@ -24,9 +24,9 @@ def correct_answer(L,r,RAntwort):
 
 def result_answers(r,L,SL):
     SL = importPlayerList()
-    print("Die richtige Antwort war ",L[r][2],"\n") 
+    print("Die richtige Antwort war "+L[r][2]+"\n") 
     for i in range(0,len(SL)):
-        print(SL[i][0], "hat momentan",SL[i][1],"Punkt(e).""\n")
+        print(SL[i][0]+ " hat momentan "+SL[i][1]+" Punkt(e).""\n")
 
 def punkte_rechnen(Quiz,o,x, pressedKey):
     SL = importPlayerList()
