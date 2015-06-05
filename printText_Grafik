@@ -1,0 +1,28 @@
+import pygame
+import sys
+
+def print_question():
+    if __name__ == '__main__': 
+        init()
+        event_loop()
+
+def print_answers(L,r):
+    laenge = len(L[r][1])
+    for i in range(0,laenge):
+        print(L[r][1][i])
+
+ 
+def init(L,r):
+    WINWIDTH = 640
+    WINHEIGHT = 480
+    pygame.init()
+    screen = pygame.display.set_mode((WINWIDTH, WINHEIGHT))
+    screen.fill((0, 255, 0))
+    font = pygame.font.SysFont('curier', 50)
+    text = font.render(L[r][0], True, (0, 0, 200))
+    w = WINWIDTH / 2
+    h = WINHEIGHT / 2
+    screen.blit(text, (w, h))
+    pygame.display.update()
+ 
+#Geht noch nicht
