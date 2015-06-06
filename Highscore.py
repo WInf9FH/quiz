@@ -18,4 +18,4 @@ def compareScore(player, score, variante):
         Highscore[variante][1] = score
         saveHighscoreList(Highscore)
         variante = variante+1
-        print("Und hat damit einen neuen Highscore für den Spielmodus",variante,"erzielt!")
+        print("Und hat damit einen neuen Highscore fuer den Spielmodus",variante,"erzielt!")
