@@ -1,0 +1,37 @@
+[
+  {
+    "frage": "Wie heißt die Hauptstadt von Deutschland?",
+    "antworten": ["Bonn", "Hamburg", "Berlin", "München"],
+    "richtig": "C"
+  },
+  {
+    "frage": "Welches Teilchen ist positiv?",
+    "antworten": ["Proton", "Neutron", "Elektron", "Anion"],
+    "richtig": "A"
+  },
+  {
+    "frage": "Wie viele Einwohner hat Deutschland?",
+    "antworten": ["82", "82.000", "82 Mrd.", "82 Mio."],
+    "richtig": "D"
+  },
+  {
+    "frage": "Wann begann der erste Weltkrieg?",
+    "antworten": ["1913", "1914", "1933", "1892"],
+    "richtig": "B"
+  },
+  {
+    "frage": "Wann wurde Angela Merkel geboren?",
+    "antworten": ["1954", "1960", "1964", "1950"],
+    "richtig": "A"
+  },
+  {
+    "frage": "Wo wurde Barack Obama geboren?",
+    "antworten": ["Südafrika", "Toronto", "New York", "Hawaii"],
+    "richtig": "D"
+  },
+  {
+    "frage": "Wie viele Einwohner hat Berlin?",
+    "antworten": ["1,5 Millionen", "2 Millionen", "3,5 Millionen", "4 Millionen"],
+    "richtig": "C"
+  }
+]
