@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "winf9-quiz"
+dynamic = ["version"]
+description = "Das Quiz vom WInf9-Kurs. Jetzt in schön."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "GPL-2.0-only" }
+dependencies = ["rich>=13"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+quiz = "winf9quiz.app:main"
+
+[tool.setuptools]
+packages = ["winf9quiz"]
+
+[tool.setuptools.dynamic]
+version = { attr = "winf9quiz.__version__" }
+
+[tool.setuptools.package-data]
+winf9quiz = ["data/*.json"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["UP006", "UP007", "UP035", "UP045"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
